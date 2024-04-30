@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
-        /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
-        int[] results = new int[100]; // 예시로 크기를 100으로 설정
-        int resultEnd = -1;
+        // 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다.
+        // 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언
+        int[] results = new int[10]; // 예시로 크기를 10으로 설정
+        int count = 0;
 
-        /* 반복문 사용하여 연산을 반복 */
+        // 반복문 사용하여 연산을 반복
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
@@ -22,7 +22,7 @@ public class App {
             sc.nextLine();
 
             int result = 0;
-            /* 제어문을 사용하여 연산을 수행하고 결과를 배열에 저장 */
+            // 제어문을 사용하여 연산을 수행하고 결과를 배열에 저장
             if (num2 > 0) {
                 if (operator == '+') {
                     result = num1 + num2;
@@ -36,13 +36,21 @@ public class App {
                     result = num1 % num2;
                 }
 
-                /* 연산의 결과를 배열에 저장합니다. */
-                /* index를 증가 시킵니다. */
-                resultEnd++;
-                results[resultEnd] = result;
+                // 현재 저장된 결과의 개수가 배열 크기보다 크거나 같으면 가장 오래된 결과 삭제
+                if (count >= results.length) {
+                    for (int i = 0; i < results.length - 1; i++) {
+                        results[i] = results[i + 1];
+                    }
+                    count--; // 삭제된 결과에 따라 현재 저장된 결과의 개수 감소
+                }
+
+                // 연산의 결과를 배열에 저장합니다.
+                // index를 증가 시킵니다.
+                results[count] = result;
+                count++;
             }
 
-            /* 결과 출력 */
+            // 결과 출력
             System.out.println("결과: " + result);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -51,11 +59,12 @@ public class App {
                 break;
             }
         }
-
-        /* 결과 배열 출력 */
+        // 결과 배열 출력
+        // 10개 이상의 값을 입력 시 맨 앞의 값이 없어지고 맨 마지막 값이 들어온다.
         System.out.println("모든 연산 결과:");
-        for (int i = 0; i <= resultEnd; i++) {
+        for (int i = 0; i < count; i++) {
             System.out.println(results[i]);
         }
+
     }
 }
