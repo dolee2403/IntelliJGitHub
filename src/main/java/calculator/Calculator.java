@@ -3,9 +3,9 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
+    private int result;
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     ArrayList<Integer> intList = new ArrayList<Integer>(); // 선언 및 생성
-
     public int calculate(int num1, int num2, char operator) throws Exception {
         int result = 0;
 
@@ -26,7 +26,13 @@ public class Calculator {
             } else {
                 throw new Exception("오류");
             }
-
         return result;
+    }
+
+    public int getResult() {
+        return result;
+    }
+    public void setResult(int result) {
+        this.result = result;
     }
 }
