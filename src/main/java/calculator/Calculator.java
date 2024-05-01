@@ -47,4 +47,13 @@ public class Calculator {
         intList.clear(); // 결과를 저장한 컬렉션을 비움
         this.result = 0; // 연산 결과를 초기화
     }
+
+    public void inquiryResults() {
+        System.out.println("모든 연산 결과:");
+        for (int i = 0; i < intList.size(); i++) {
+            System.out.println(intList.get(i));
+        }
+        System.out.println("최종 연산 결과: " + result);
+    }
+
 }

@@ -52,6 +52,6 @@ public class App {
                 break;
             }
         }
-        System.out.println("최종 연산 결과: " + calculator.getResult());
+        calculator.inquiryResults(); // 모든 연산 결과 출력
     }
 }
