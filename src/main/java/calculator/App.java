@@ -38,8 +38,16 @@ public class App {
                 //오류 출력(방법은 여러가지)
             }
 
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            calculator.removeResult(); // 연산 결과 제거
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String text = sc.nextLine();
+            if (text.equals("remove")) {
+                intList.remove(0); // 1번 순번의 값을 삭제합니다.
+                System.out.println(intList);
+            }
+
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+           text = sc.nextLine();
             if (text.equals("exit")) {
                 break;
             }
