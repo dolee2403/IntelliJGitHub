@@ -3,7 +3,11 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    private  ArrayList<Integer> results = new ArrayList<>(); // 선언 및 생성
+    private  ArrayList<Integer> results;
+    /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
+    public Calculator(ArrayList<Integer> results) {
+        this.results = results;
+    }
 
     public int calculate(int num1, int num2, char operator) throws Exception {
         int result = 0;

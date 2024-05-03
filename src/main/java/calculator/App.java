@@ -10,7 +10,7 @@ public class App {
         // 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다.
         // 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언
 
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ArrayList<>());
 
         // 반복문 사용하여 연산을 반복
         while (true) {
