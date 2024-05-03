@@ -29,27 +29,19 @@ public class Calculator {
         return result;
     }
 
+    // Getter 메서드 구현
     public ArrayList<Integer> getResults() {
         return results;
     }
 
+    // Setter 메서드 구현
     public void setResults(ArrayList<Integer> results) {
         this.results = results;
     }
 
-    // Getter 메서드 구현
-    public int getResult() {
-        return results.get(0);
-    }
-
-    // Setter 메서드 구현
-    public void setResult(int result) {
-        this.results.set(0, result);
-    }
-
     // 결과를 컬렉션에서 제거하는 메서드
     public void removeResult(int index) {
-        this.results.remove(index);  // 연산 결과를 초기화
+        this.results.remove(index);  // 연산 결과를 제거
     }
 
     public void inquiryResults() {
@@ -57,7 +49,7 @@ public class Calculator {
         for (int i = 0; i < results.size(); i++) {
             System.out.println(results.get(i));
         }
-        System.out.println("최종 연산 결과: " + getResult());
+        System.out.println("최종 연산 결과: " + results.size());
     }
 
 }

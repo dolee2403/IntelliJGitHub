@@ -41,7 +41,7 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String text = sc.nextLine();
             if (text.equals("remove")) {
-                calculator.removeResult(0); // 연산 결과 제거 // 1번 순번의 값을 삭제합니다.
+                calculator.removeResult(0); // 1번 순번의 값을 삭제합니다.
                 System.out.println(intList);
             }
 
